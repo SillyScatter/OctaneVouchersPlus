@@ -3,7 +3,9 @@ package com.octane.sllly.octanevouchersplus;
 import com.octanepvp.splityosis.octaneeconomies.api.OctaneEconomiesAPI;
 import com.octanepvp.splityosis.octanevouchers.api.OctaneVouchersAPI;
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Octanevouchersplus extends JavaPlugin {
@@ -54,6 +56,9 @@ public final class Octanevouchersplus extends JavaPlugin {
                 boolean dupeProtection = commandVoucherSection.getBoolean(key+".dupeprotection");
                 repeat = commandVoucherSection.getInt(key + ".repeat");
                 ItemStack itemStack = Util.getItemFromSection(commandVoucherSection.getConfigurationSection(key+".item"));
+                ItemMeta itemMeta = itemStack.getItemMeta();
+                itemMeta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+                itemStack.setItemMeta(itemMeta);
                 ChancePicker<String> commands = new ChancePicker<>();
 
                 ConfigurationSection commandSection = commandVoucherSection.getConfigurationSection(key+".commands");
