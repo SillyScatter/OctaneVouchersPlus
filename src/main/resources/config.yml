@@ -1,0 +1,51 @@
+moneyvoucher:
+  1:
+    name: cashone
+    eco: vault
+    msg: "&a+&a&l%symbol%%amount%"
+    min: 10000
+    max: 50000
+    confirmgui: false
+    dupeprotection: false
+    item:
+      material: PAPER
+      custom-name: "&c&lCash Cheque"
+      custom-lore:
+        - ""
+        - "&cRedeem&7 this note to get a "
+        - "&7random amount of money!"
+  2:
+    name: cashtwo
+    eco: vault
+    msg: "&a+&a&l%symbol%%amount%"
+    min: 50000
+    max: 100000
+    confirmgui: false
+    dupeprotection: false
+    item:
+      material: PAPER
+      custom-name: "&c&lCash Cheque"
+      custom-lore:
+        - ""
+        - "&cRedeem&7 this note to get a "
+        - "&7random amount of money!"
+commandvoucher:
+  1:
+    name: cmd1
+    confirmgui: false
+    dupeprotection: true
+    repeat: 1
+    item:
+      material: TRIPWIRE_HOOK
+      custom-name: "&4&kii&&c Random Key &4&kii"
+      custom-lore:
+        - ""
+        - "&bRedeem&7 this key to receive"
+        - "&7a random crate key!"
+    commands:
+      command1:
+        command: 'ov give %player% crate_key_skills'
+        weight: 32
+      command2:
+        command: 'economy give %player% 1'
+        weight: 16

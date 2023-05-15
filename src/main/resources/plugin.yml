@@ -1,0 +1,8 @@
+name: OctaneVouchersPlus
+version: '${project.version}'
+main: com.octane.sllly.octanevouchersplus.Octanevouchersplus
+api-version: 1.19
+depend:
+  - OctaneVouchers
+  - OctaneEconomies
+  - Vault
